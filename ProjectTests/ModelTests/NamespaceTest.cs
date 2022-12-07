@@ -12,5 +12,11 @@ namespace MyProgram.Tests
     {
       CollectionAssert.AreEqual(new List<int> {2,3,4,5,6,7,8,9,10}, Program.ListMaker(10));
     }
+    [TestMethod]
+    public void ListManipulate_RemovesMultiplesOfTwo_List()
+    {
+      Program.ListMaker(10)
+      CollectionAssert.AreEqual(primeList = {3,5,7,9}, Program.Remove(2));
+    }
   }
 }
