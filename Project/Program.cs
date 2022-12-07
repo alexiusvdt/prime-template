@@ -8,15 +8,20 @@ namespace MyProgram {
       // get user input
       Console.WriteLine("What number would you like to use?");
       int n = int.Parse(Console.ReadLine());
-      int j = 2;
-      ListMaker(n);
-      //loop while j < 7 or whatever cutoff # we need
-      //create list of numbers from 2 through n      
-      // Remove(j);
-
-      //start searching through and removing entries
-      // .removeAt(i)
+      NonPrimeRemoval(n);
     }
+
+    public static List<int> NonPrimeRemoval(int n)
+    {
+    List<int> primeList = ListMaker(n);
+      for (int j = 2; j < 8; j++)
+        {
+        Remove(j, primeList);
+        }
+      Console.Write("Here are your pimples bro: " + primeList);
+      return primeList;
+    }
+
 
     public static List<int> Remove(int n, List<int> primeList)
     {

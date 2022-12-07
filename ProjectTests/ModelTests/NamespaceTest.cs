@@ -38,5 +38,15 @@ namespace MyProgram.Tests
       // List<int> tempList = Program.Remove(3, Program.Remove(2, primeList));
       CollectionAssert.AreEqual(new List<int> {2,3,5,7}, Program.Remove(5, primeList));
     }  
+    [TestMethod]
+    public void ListManipulate_RemovesAllPrimes_List()
+    {
+      CollectionAssert.AreEqual(new List<int> {2,3,5,7}, Program.NonPrimeRemoval(10));
+    }  
+    [TestMethod]
+    public void ListManipulate_RemovesAllPrimes100_List()
+    {
+      CollectionAssert.AreEqual(new List<int> {2,3,5,7,11,13,17,19,23,29,31,37,41,43,47,53,59,61,67,71,73,79,83,89}, Program.NonPrimeRemoval(89));
+    }  
   }
 }
