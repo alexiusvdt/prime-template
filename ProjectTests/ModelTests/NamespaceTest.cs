@@ -1,6 +1,7 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using MyProgram;
 using System.Collections.Generic;
+using System;
 
 namespace MyProgram.Tests
 {
@@ -15,8 +16,12 @@ namespace MyProgram.Tests
     [TestMethod]
     public void ListManipulate_RemovesMultiplesOfTwo_List()
     {
-      Program.ListMaker(10)
-      CollectionAssert.AreEqual(primeList = {3,5,7,9}, Program.Remove(2));
+      List<int> primeList = new List<int> {2,3,4,5,6,7,8,9,10};
+      foreach (int item in primeList)
+      {
+      Console.WriteLine(item); 
+      }
+      CollectionAssert.AreEqual(new List<int> {3,5,7,9}, Program.Remove(2, primeList));
     }
   }
 }
