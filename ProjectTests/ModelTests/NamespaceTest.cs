@@ -1,16 +1,16 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using ProjectName.Models;
+using MyProgram;
+using System.Collections.Generic;
 
-namespace ProjectName.Tests
+namespace MyProgram.Tests
 {
   [TestClass]
   public class ItemTests
   {
-    // Test methods will go here, this is just an example
-    // [TestMethod]
-    // public void ItemConstructor_CreatesInstanceOfItem_Item()
-    // {
-    //   Item newItem = new Item();
-    //   Assert.AreEqual(typeof(Item), newItem.GetType());
+    [TestMethod]
+    public void ListConstructor_CreatesInstanceOfList_List()
+    {
+      CollectionAssert.AreEqual(new List<int> {2,3,4,5,6,7,8,9,10}, Program.ListMaker(10));
+    }
   }
 }
