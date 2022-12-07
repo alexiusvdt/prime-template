@@ -8,33 +8,38 @@ namespace MyProgram {
       // get user input
       Console.WriteLine("What number would you like to use?");
       int n = int.Parse(Console.ReadLine());
-      
-      //create list of numbers from 2 through n
+      int j = 2;
       ListMaker(n);
-      // Remove(n);
+      //loop while j < 7 or whatever cutoff # we need
+      //create list of numbers from 2 through n      
+      // Remove(j);
+
       //start searching through and removing entries
       // .removeAt(i)
     }
 
     public static List<int> Remove(int n, List<int> primeList)
     {
-      for (int i = 0; i <= primeList.Count; i++)
+      for (int i = 0; i < primeList.Count; i++)
       {
-        if (primeList[i] % n == 0)
+        // Console.WriteLine(primeList.Count);
+        // Console.WriteLine(i);
+        if (primeList[i] % n == 0 && primeList[i] != n)
         {
           primeList.Remove(primeList[i]);
-          // Console.WriteLine("removed {0}", primeList[i]);
         }
         else 
         {
           continue;
         }
       }
+      foreach (int item in primeList)
+      {
+      Console.WriteLine(item); 
+      }
+      Console.WriteLine("===============");
       return primeList;
     }
-
-    
-
 
     public static List<int> ListMaker(int n)
     {

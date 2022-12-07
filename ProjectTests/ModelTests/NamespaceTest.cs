@@ -13,6 +13,7 @@ namespace MyProgram.Tests
     {
       CollectionAssert.AreEqual(new List<int> {2,3,4,5,6,7,8,9,10}, Program.ListMaker(10));
     }
+    
     [TestMethod]
     public void ListManipulate_RemovesMultiplesOfTwo_List()
     {
@@ -23,12 +24,19 @@ namespace MyProgram.Tests
       }
       CollectionAssert.AreEqual(new List<int> {2,3,5,7,9}, Program.Remove(2, primeList));
     }
-        [TestMethod]
+
+    [TestMethod]
     public void ListManipulate_RemovesMultiplesOfThree_List()
     {
       List<int> primeList = new List<int> {2,3,4,5,6,7,8,9,10};
-      // CollectionAssert.AreEqual(new List<int> {2,3,5,7,9}, Program.Remove(2, primeList));
       CollectionAssert.AreEqual(new List<int> {2,3,5,7}, Program.Remove(3, Program.Remove(2, primeList)));
     }
+    [TestMethod]
+    public void ListManipulate_RemovesMultiplesOfFive_List()
+    {
+      List<int> primeList = new List<int> {2,3,5,7};
+      // List<int> tempList = Program.Remove(3, Program.Remove(2, primeList));
+      CollectionAssert.AreEqual(new List<int> {2,3,5,7}, Program.Remove(5, primeList));
+    }  
   }
 }
